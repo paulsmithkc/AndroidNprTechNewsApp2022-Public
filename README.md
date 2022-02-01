@@ -34,3 +34,8 @@ Using Thread primitives to replace the deprecated AsyncTask class.
 * Thread
 * Activity.runOnUiThread()
 * Task cancellation
+
+## NPRTechNews6
+Using Retrofit to make HTTP requests and GSON to parse the response.
+* [Retrofit](https://square.github.io/retrofit/)
+* [GSON](https://github.com/google/gson)

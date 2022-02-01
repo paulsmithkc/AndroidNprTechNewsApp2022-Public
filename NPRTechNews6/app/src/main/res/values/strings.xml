@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NPR Tech News</string>
+    <string name="fetch">Fetch</string>
+    <string name="ready">Ready</string>
+    <string name="errorFetchURL">Error fetching news feed, failed due to bad url. See logs.</string>
+    <string name="errorFetchIO">Error fetching news feed, failed due to IO error. See logs.</string>
+    <string name="errorFetchInterrupted">Error fetching news feed, task was interrupted. See logs.</string>
+    <string name="errorFetchOther">Error fetching news feed, failed for some other reason. See logs.</string>
+    <string name="errorNetworkDisconnected">Network is disconnected.</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="connected">Connected</string>
+</resources>
