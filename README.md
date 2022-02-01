@@ -1,5 +1,11 @@
 # NPR Tech News
-Completed app for AWD 1112 Unit 03.
+Completed news reader app for AWD 1112 Unit 03.
+
+Fetches the latest NPR Tech News from this API endpoint:
+https://feeds.npr.org/1019/feed.json
+
+Source:
+https://npr.codes/npr-now-supports-json-feed-1c8af29d0ce7
 
 ## NPRTechNews1
 Initial version of news reader.
