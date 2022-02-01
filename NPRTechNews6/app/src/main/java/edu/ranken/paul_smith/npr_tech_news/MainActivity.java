@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
     // state
     private boolean isConnected;
+    private ConnectivityManager connectivityManager;
+    private FetchTask activeTask;
+
     private final ConnectivityManager.NetworkCallback networkCallback = new ConnectivityManager.NetworkCallback() {
         @Override
         public void onAvailable(@NonNull Network network) {
@@ -48,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onCapabilitiesChanged(@NonNull Network network, @NonNull NetworkCapabilities networkCapabilities) {
             isConnected =
-                    networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
-                            networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED);
+                networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
+                networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED);
 
             Log.i(LOG_TAG, "Network " + network + " has internet capability: " + isConnected);
             runOnUiThread(() -> showConnected());
@@ -63,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
             runOnUiThread(() -> showConnected());
         }
     };
-    private ConnectivityManager connectivityManager;
-    private FetchTask activeTask;
 
     private void showConnected() {
         if (isConnected) {
