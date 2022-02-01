@@ -51,7 +51,10 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 Snackbar.make(fetchButton, R.string.errorNetworkDisconnected, Snackbar.LENGTH_SHORT).show();
             }
+            Log.i(LOG_TAG, "onClick");
         });
+
+        Log.i(LOG_TAG, "onCreate");
     }
 
     @Override
@@ -114,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
                 connection.setRequestMethod("GET");
                 connection.setDoInput(true);
                 connection.connect();
+
+                Log.i(LOG_TAG, "connected");
 
                 // open a reader for the response
                 try (InputStream stream = connection.getInputStream()) {

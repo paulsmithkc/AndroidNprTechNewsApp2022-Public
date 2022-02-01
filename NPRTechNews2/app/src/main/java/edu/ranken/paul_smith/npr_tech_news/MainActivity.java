@@ -45,7 +45,10 @@ public class MainActivity extends AppCompatActivity {
         fetchButton.setOnClickListener((view) -> {
             activeTask = new FetchTask();
             activeTask.execute();
+            Log.i(LOG_TAG, "onClick");
         });
+
+        Log.i(LOG_TAG, "onCreate");
     }
 
     @Override
@@ -87,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                 connection.setRequestMethod("GET");
                 connection.setDoInput(true);
                 connection.connect();
+
+                Log.i(LOG_TAG, "connected");
 
                 // open a reader for the response
                 try (InputStream stream = connection.getInputStream()) {

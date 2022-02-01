@@ -85,11 +85,16 @@ public class MainActivity extends AppCompatActivity {
         connectedIcon = findViewById(R.id.connectedIcon);
 
         // register listeners
-        fetchButton.setOnClickListener((view) -> startFetch());
+        fetchButton.setOnClickListener((view) -> {
+            startFetch();
+            Log.i(LOG_TAG, "onClick");
+        });
 
         // network events
         connectivityManager = getSystemService(ConnectivityManager.class);
         connectivityManager.registerDefaultNetworkCallback(networkCallback);
+
+        Log.i(LOG_TAG, "onCreate");
     }
 
     @Override
@@ -159,6 +164,8 @@ public class MainActivity extends AppCompatActivity {
                 connection.setRequestMethod("GET");
                 connection.setDoInput(true);
                 connection.connect();
+
+                Log.i(LOG_TAG, "connected");
 
                 // open a reader for the response
                 try (InputStream stream = connection.getInputStream()) {

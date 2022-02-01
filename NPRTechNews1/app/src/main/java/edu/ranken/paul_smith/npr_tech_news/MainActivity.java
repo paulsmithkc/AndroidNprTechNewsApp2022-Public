@@ -37,7 +37,10 @@ public class MainActivity extends AppCompatActivity {
         // register listeners
         fetchButton.setOnClickListener((view) -> {
             fetchFeed();
+            Log.i(LOG_TAG, "onClick");
         });
+
+        Log.i(LOG_TAG, "onCreate");
     }
 
     private void fetchFeed() {
@@ -53,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             connection.setRequestMethod("GET");
             connection.setDoInput(true);
             connection.connect();
+
+            Log.i(LOG_TAG, "connected");
 
             // read the response
             try (InputStream stream = connection.getInputStream()) {
