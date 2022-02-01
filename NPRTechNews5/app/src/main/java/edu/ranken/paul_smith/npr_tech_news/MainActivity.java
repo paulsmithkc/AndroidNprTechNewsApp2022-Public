@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -168,13 +169,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(LOG_TAG, "connected");
 
                 // open a reader for the response
-                try (InputStream stream = connection.getInputStream()) {
+                try (InputStream stream = new BufferedInputStream(connection.getInputStream())) {
                     try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
 
                         // read the response line by line
                         StringBuilder sb = new StringBuilder();
                         String line = null;
-                        while ((line = reader.readLine()) != null && !cancelled) {
+                        while (!cancelled && (line = reader.readLine()) != null) {
                             sb.append(line).append('\n');
                         }
 

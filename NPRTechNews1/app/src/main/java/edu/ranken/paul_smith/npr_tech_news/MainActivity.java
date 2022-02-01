@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i(LOG_TAG, "connected");
 
             // read the response
-            try (InputStream stream = connection.getInputStream()) {
+            try (InputStream stream = new BufferedInputStream(connection.getInputStream())) {
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
 
                     // read the response line by line

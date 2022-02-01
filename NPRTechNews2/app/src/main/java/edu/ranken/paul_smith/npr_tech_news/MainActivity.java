@@ -2,7 +2,6 @@ package edu.ranken.paul_smith.npr_tech_news;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.NetworkOnMainThreadException;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -94,13 +94,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(LOG_TAG, "connected");
 
                 // open a reader for the response
-                try (InputStream stream = connection.getInputStream()) {
+                try (InputStream stream = new BufferedInputStream(connection.getInputStream())) {
                     try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
 
                         // read the response line by line
                         StringBuilder sb = new StringBuilder();
                         String line = null;
-                        while ((line = reader.readLine()) != null) {
+                        while (!isCancelled() && (line = reader.readLine()) != null) {
                             sb.append(line).append('\n');
                         }
 
