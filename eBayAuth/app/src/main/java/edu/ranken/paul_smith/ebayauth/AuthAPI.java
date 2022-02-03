@@ -20,7 +20,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public class AuthAPI {
-    private static final String LOG_TAG = "AuthRequest";
+    private static final String LOG_TAG = "AuthAPI";
 
     private final String baseUrl;
     private final String clientId;
