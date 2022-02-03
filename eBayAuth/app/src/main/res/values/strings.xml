@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">eBay Auth</string>
+    <string name="messageAuthenticated">Authenticated.</string>
+    <string name="errorAuth">Auth Error.</string>
 </resources>
