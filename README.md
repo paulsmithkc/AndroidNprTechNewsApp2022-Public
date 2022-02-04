@@ -49,3 +49,10 @@ Using Thread primitives to replace the deprecated AsyncTask class.
 Using Retrofit to make HTTP requests and GSON to parse the response.
 - [Retrofit](https://square.github.io/retrofit/)
 - [GSON](https://github.com/google/gson)
+
+## NPRTechNews7
+Migrating project to follow modern arhcitecure patterns using ViewModel and LiveData.
+- [Guide to app architecture](https://developer.android.com/jetpack/guide)
+- [ViewModel Overview](https://developer.android.com/topic/libraries/architecture/viewmodel)
+- [LiveData Overview](https://developer.android.com/topic/libraries/architecture/livedata)
+- [Save UI States](https://developer.android.com/topic/libraries/architecture/saving-states)
