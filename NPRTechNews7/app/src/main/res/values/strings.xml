@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">NPR Tech News</string>
+
+    <string name="disconnected">Disconnected</string>
+    <string name="connected">Connected</string>
+    <string name="refresh">Refresh</string>
+    <string name="ready">Ready</string>
+
+    <string name="errorNetworkDisconnected">Network is disconnected.</string>
+    <string name="messageFeedRefreshed">Feed refreshed.</string>
+    <string name="messageNetworkError">Network error.</string>
+
+</resources>
