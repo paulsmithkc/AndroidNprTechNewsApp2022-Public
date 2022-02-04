@@ -7,13 +7,13 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 
-public class NprNewsAPI {
-    private static final String LOG_TAG = "NprNewsAPI";
+public class NewsAPI {
+    private static final String LOG_TAG = "NewsAPI";
 
     private final Retrofit retrofit;
-    private final NprNewsService service;
+    private final NewsService service;
 
-    public NprNewsAPI() {
+    public NewsAPI() {
         // Create retrofit context
         retrofit =
             new Retrofit.Builder()
@@ -22,14 +22,14 @@ public class NprNewsAPI {
                 .build();
 
         // Create service from interface
-        service = retrofit.create(NprNewsService.class);
+        service = retrofit.create(NewsService.class);
     }
 
     public Call<Feed> getFeed() {
         return service.getFeed();
     }
 
-    public interface NprNewsService {
+    public interface NewsService {
         @GET("/1019/feed.json")
         Call<Feed> getFeed();
     }

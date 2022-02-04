@@ -13,7 +13,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
-import edu.ranken.paul_smith.npr_tech_news.data.NprNewsAPI;
+import edu.ranken.paul_smith.npr_tech_news.data.NewsAPI;
 import edu.ranken.paul_smith.npr_tech_news.ui.NprNewsApp;
 import edu.ranken.paul_smith.npr_tech_news.ui.NprNewsModel;
 
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void showFeed(NprNewsAPI.Feed feed) {
+    private void showFeed(NewsAPI.Feed feed) {
         StringBuilder output = new StringBuilder();
 
         if (feed == null) {
@@ -107,9 +107,9 @@ public class MainActivity extends AppCompatActivity {
             if (feed.items == null) {
                 output.append("ITEMS MISSING\n");
             } else {
-                ArrayList<NprNewsAPI.FeedItem> items = feed.items;
+                ArrayList<NewsAPI.FeedItem> items = feed.items;
                 for (int i = 0; i < items.size(); ++i) {
-                    NprNewsAPI.FeedItem item = feed.items.get(i);
+                    NewsAPI.FeedItem item = feed.items.get(i);
                     output.append("items[").append(i).append("]: ").append(item.title).append("\n");
                 }
                 output.append("\n");

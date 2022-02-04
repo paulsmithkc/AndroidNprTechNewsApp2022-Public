@@ -9,7 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import edu.ranken.paul_smith.npr_tech_news.R;
 import edu.ranken.paul_smith.npr_tech_news.data.ConnectivityDataSource;
-import edu.ranken.paul_smith.npr_tech_news.data.NprNewsAPI;
+import edu.ranken.paul_smith.npr_tech_news.data.NewsAPI;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,10 +22,10 @@ public class NprNewsModel extends AndroidViewModel {
     private final LiveData<Boolean> connected;
 
     // news feed
-    private final NprNewsAPI newsApi;
+    private final NewsAPI newsApi;
     private final MutableLiveData<Boolean> fetching;
     private final MutableLiveData<String> errorMessage;
-    private final MutableLiveData<NprNewsAPI.Feed> feed;
+    private final MutableLiveData<NewsAPI.Feed> feed;
 
     // snackbar
     private final MutableLiveData<String> snackbarMessage;
@@ -39,7 +39,7 @@ public class NprNewsModel extends AndroidViewModel {
         connected = connectivityDataSource.getConnected();
 
         // news feed
-        newsApi = new NprNewsAPI();
+        newsApi = new NewsAPI();
         fetching = new MutableLiveData<>(false);
         errorMessage = new MutableLiveData<>(null);
         feed = new MutableLiveData<>(null);
@@ -62,7 +62,7 @@ public class NprNewsModel extends AndroidViewModel {
         return errorMessage;
     }
 
-    public LiveData<NprNewsAPI.Feed> getFeed() {
+    public LiveData<NewsAPI.Feed> getFeed() {
         return feed;
     }
 
@@ -74,9 +74,9 @@ public class NprNewsModel extends AndroidViewModel {
         Log.i(LOG_TAG, "refreshFeed()");
         if (Boolean.TRUE.equals(connected.getValue())) {
             fetching.postValue(true);
-            newsApi.getFeed().enqueue(new Callback<NprNewsAPI.Feed>() {
+            newsApi.getFeed().enqueue(new Callback<NewsAPI.Feed>() {
                 @Override
-                public void onResponse(Call<NprNewsAPI.Feed> call, Response<NprNewsAPI.Feed> response) {
+                public void onResponse(Call<NewsAPI.Feed> call, Response<NewsAPI.Feed> response) {
                     Log.i(LOG_TAG, "onResponse()");
                     String message = getApplication().getString(R.string.messageFeedRefreshed);
                     fetching.postValue(false);
@@ -86,7 +86,7 @@ public class NprNewsModel extends AndroidViewModel {
                 }
 
                 @Override
-                public void onFailure(Call<NprNewsAPI.Feed> call, Throwable t) {
+                public void onFailure(Call<NewsAPI.Feed> call, Throwable t) {
                     Log.e(LOG_TAG, "onFailure()", t);
                     String message = t.getMessage();
                     fetching.postValue(false);
