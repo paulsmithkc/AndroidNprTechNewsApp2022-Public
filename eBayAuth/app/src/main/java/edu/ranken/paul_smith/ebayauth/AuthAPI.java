@@ -122,7 +122,7 @@ public class AuthAPI {
         @FormUrlEncoded
         @Headers({
             "Accept: application/json",
-            "User-Agent: retrofit"
+            "User-Agent: retrofit/2.9.0"
         })
         Call<AuthResponse> authenticate(
             @Header("Authorization") String authorization,
