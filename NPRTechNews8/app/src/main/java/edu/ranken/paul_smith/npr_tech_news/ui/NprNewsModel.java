@@ -47,6 +47,15 @@ public class NprNewsModel extends AndroidViewModel {
         // snackbar
         snackbarMessage = new MutableLiveData<>(null);
 
+        // fetch feed when connected
+        connected.observeForever((connected) -> {
+            if (connected) {
+                if (feed.getValue() == null) {
+                    refreshFeed();
+                }
+            }
+        });
+
         Log.i(LOG_TAG, "constructor");
     }
 

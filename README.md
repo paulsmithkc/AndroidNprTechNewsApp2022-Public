@@ -56,3 +56,10 @@ Migrating project to follow modern arhcitecure patterns using ViewModel and Live
 - [ViewModel Overview](https://developer.android.com/topic/libraries/architecture/viewmodel)
 - [LiveData Overview](https://developer.android.com/topic/libraries/architecture/livedata)
 - [Save UI States](https://developer.android.com/topic/libraries/architecture/saving-states)
+
+## NPRTechNews8
+Displaying the news stories using a RecyclerView.
+- [Create dynamic lists with RecyclerView](https://developer.android.com/guide/topics/ui/layout/recyclerview)
+- [ArrayList class](https://developer.android.com/reference/java/util/ArrayList)
+- [Generics in Java](https://docs.oracle.com/javase/tutorial/java/generics/index.html)
+
