@@ -20,7 +20,7 @@ public class MovieListViewModel extends ViewModel {
         ArrayList<Movie> movieList = new ArrayList<>();
         movieList.add(new Movie("Matrix"));
         movieList.add(new Movie("Matrix Reloaded"));
-        movieList.add(new Movie("Matrix Revelations"));
+        movieList.add(new Movie("Matrix Revolutions"));
 
         // create live data
         errorText = new MutableLiveData<>(null);

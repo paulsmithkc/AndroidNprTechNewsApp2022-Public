@@ -47,8 +47,11 @@ Using Thread primitives to replace the deprecated AsyncTask class.
 
 ## NPRTechNews6
 Using Retrofit to make HTTP requests and GSON to parse the response.
-- [Retrofit](https://square.github.io/retrofit/)
-- [GSON](https://github.com/google/gson)
+- [Retrofit - Official Tutorial](https://square.github.io/retrofit/)
+- [Retrofit - GitHub Repository](https://github.com/square/retrofit)
+- [GSON - User Guide](https://github.com/google/gson/blob/master/UserGuide.md)
+- [GSON - GitHub Repository](https://github.com/google/gson)
+- [JSON Language Specification](https://www.json.org)
 
 ## NPRTechNews7
 Migrating project to follow modern arhcitecure patterns using ViewModel and LiveData.
@@ -58,8 +61,13 @@ Migrating project to follow modern arhcitecure patterns using ViewModel and Live
 - [Save UI States](https://developer.android.com/topic/libraries/architecture/saving-states)
 
 ## NPRTechNews8
-Displaying the news stories using a RecyclerView.
+Displaying the list of news stories using a RecyclerView.
 - [Create dynamic lists with RecyclerView](https://developer.android.com/guide/topics/ui/layout/recyclerview)
 - [ArrayList class](https://developer.android.com/reference/java/util/ArrayList)
 - [Generics in Java](https://docs.oracle.com/javase/tutorial/java/generics/index.html)
 
+## NPRTechNews9
+Displaying the header image for the news stories using Picasso.
+- [Picasso - Official Tutorial](https://square.github.io/picasso/)
+- [Picasso - GitHub Repository](https://github.com/square/picasso)
+- [Picasso - Slides](https://docs.google.com/presentation/d/1h26EoArWQ2lQ8jQjwpvvGbqW2bvwtVhj/edit?usp=sharing&ouid=114456564937978629252&rtpof=true&sd=true)

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="stories_per_row">3</integer>
+    <dimen name="item_story_image_size">100dp</dimen>
+    <dimen name="item_story_image_resize">200dp</dimen>
+</resources>

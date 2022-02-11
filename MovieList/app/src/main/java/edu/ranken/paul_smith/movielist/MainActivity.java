@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 //        movies = new ArrayList<>();
 //        movies.add(new Movie("Matrix"));
 //        movies.add(new Movie("Matrix Reloaded"));
-//        movies.add(new Movie("Matrix Revelations"));
+//        movies.add(new Movie("Matrix Revolutions"));
 
         // create adapter
         adapter = new MovieListAdapter(this, model);
