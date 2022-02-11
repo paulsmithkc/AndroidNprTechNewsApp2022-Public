@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import edu.ranken.paul_smith.movielist.R;
@@ -49,6 +51,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder> {
         MovieViewHolder vh = new MovieViewHolder(itemView);
         vh.title = itemView.findViewById(R.id.item_movie_title);
         vh.delete = itemView.findViewById(R.id.item_movie_delete);
+        vh.image = itemView.findViewById(R.id.item_movie_image);
 
         // register listeners
         vh.delete.setOnClickListener((view) -> {
@@ -64,5 +67,20 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder> {
     public void onBindViewHolder(@NonNull MovieViewHolder vh, int position) {
         Movie item = items.get(position);
         vh.title.setText(item.title);
+        vh.image.setImageResource(R.drawable.ic_downloading);
+
+        if (item.image != null) {
+            vh.image.setVisibility(View.VISIBLE);
+            Picasso.get()
+                .load(item.image)
+                .placeholder(R.drawable.ic_downloading)
+                .error(R.drawable.ic_error)
+                .resize(400, 600)
+                .centerInside()
+                .into(vh.image);
+        } else {
+            //vh.image.setImageResource(R.drawable.ic_error);
+            vh.image.setVisibility(View.GONE);
+        }
     }
 }

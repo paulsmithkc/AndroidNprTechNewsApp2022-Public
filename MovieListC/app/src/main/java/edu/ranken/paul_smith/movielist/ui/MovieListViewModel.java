@@ -18,9 +18,9 @@ public class MovieListViewModel extends ViewModel {
 
         // init list
         ArrayList<Movie> movieList = new ArrayList<>();
-        movieList.add(new Movie("Matrix"));
-        movieList.add(new Movie("Matrix Reloaded"));
-        movieList.add(new Movie("Matrix Revolutions"));
+        movieList.add(new Movie("Matrix", "https://www.themoviedb.org/t/p/w220_and_h330_face/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"));
+        movieList.add(new Movie("Matrix Reloaded", "https://www.themoviedb.org/t/p/w220_and_h330_face/9TGHDvWrqKBzwDxDodHYXEmOE6J.jpg"));
+        movieList.add(new Movie("Matrix Revolutions", "https://www.themoviedb.org/t/p/w220_and_h330_face/qEWiBXJGXK28jGBAm8oFKKTB0WD.jpg"));
 
         // create live data
         errorText = new MutableLiveData<>(null);
@@ -42,7 +42,7 @@ public class MovieListViewModel extends ViewModel {
             errorText.postValue("");
 
             ArrayList<Movie> list = movies.getValue();
-            list.add(new Movie(movieTitle));
+            list.add(new Movie(movieTitle, null));
 
             if (list.size() > 10) {
                 list.remove(0);
