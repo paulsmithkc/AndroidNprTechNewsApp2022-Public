@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         movieList.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         movieList.setAdapter(adapter);
 
+        // register listeners
         movieTitleInput.setOnEditorActionListener((view, actionId, keyEvent) -> {
             Log.i("MainActivity", "actionId: " + actionId);
             if (keyEvent != null && keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER) {

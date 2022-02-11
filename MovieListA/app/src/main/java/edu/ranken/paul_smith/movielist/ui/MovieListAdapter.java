@@ -15,8 +15,8 @@ import edu.ranken.paul_smith.movielist.R;
 import edu.ranken.paul_smith.movielist.data.Movie;
 
 public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder> {
-    private AppCompatActivity context;
-    private LayoutInflater layoutInflater;
+    private final AppCompatActivity context;
+    private final LayoutInflater layoutInflater;
     private List<Movie> items;
 
     public MovieListAdapter(AppCompatActivity context, List<Movie> items) {
