@@ -117,6 +117,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         outputText.setText(output);
-        Log.i(LOG_TAG, "showFeed()");
     }
 }
