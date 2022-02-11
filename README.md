@@ -71,3 +71,4 @@ Displaying the header image for the news stories using Picasso.
 - [Picasso - Official Tutorial](https://square.github.io/picasso/)
 - [Picasso - GitHub Repository](https://github.com/square/picasso)
 - [Picasso - Slides](https://docs.google.com/presentation/d/1h26EoArWQ2lQ8jQjwpvvGbqW2bvwtVhj/edit?usp=sharing&ouid=114456564937978629252&rtpof=true&sd=true)
+- [The Complete Guide to Dimensions in Android](https://www.bradcypert.com/the-complete-guide-to-dimensions-in-android/)
