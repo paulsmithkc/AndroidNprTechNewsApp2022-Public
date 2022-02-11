@@ -1,10 +1,5 @@
 package edu.ranken.paul_smith.movielist;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,9 +10,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import edu.ranken.paul_smith.movielist.data.Movie;
 import edu.ranken.paul_smith.movielist.ui.MovieListAdapter;
 import edu.ranken.paul_smith.movielist.ui.MovieListViewModel;
 
@@ -66,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         // setup the recycler view
         movieList.setLayoutManager(
-            new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+            new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         movieList.setAdapter(adapter);
 
         movieTitleInput.setOnEditorActionListener((view, actionId, keyEvent) -> {
